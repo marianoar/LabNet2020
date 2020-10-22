@@ -1,0 +1,7 @@
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\ejercicio1\bin\Debug\ejercicio1.exe.config
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\ejercicio1\bin\Debug\ejercicio1.exe
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\ejercicio1\bin\Debug\ejercicio1.pdb
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\ejercicio1\obj\Debug\ejercicio1.csprojAssemblyReference.cache
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\ejercicio1\obj\Debug\ejercicio1.csproj.CoreCompileInputs.cache
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\ejercicio1\obj\Debug\ejercicio1.exe
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\ejercicio1\obj\Debug\ejercicio1.pdb
