@@ -1,0 +1,15 @@
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\Lab.ResourseAccess.dll.config
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\Lab.ResourseAccess.dll
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\Lab.ResourseAccess.pdb
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\EntityFramework.dll
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\Lab.Entities.dll
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\Lab.Entities.pdb
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\Lab.Entities.dll.config
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\EntityFramework.xml
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\obj\Debug\Lab.ResourseAccess.csprojAssemblyReference.cache
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\obj\Debug\Lab.ResourseAccess.csproj.CoreCompileInputs.cache
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\obj\Debug\Lab.ResourseAccess.csproj.CopyComplete
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\obj\Debug\Lab.ResourseAccess.dll
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\Lab.ResourseAccess\obj\Debug\Lab.ResourseAccess.pdb
