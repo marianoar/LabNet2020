@@ -17,10 +17,16 @@ namespace Lab.Logic
         }
         public List<Products> Products()
         {
-
                 return context.Products.ToList();
+        }
 
-
+        public Products Delete(Products p)
+        {
+            Products a= context.Products.Find(p.CategoryID);
+            context.Products.Remove(p);
+            context.SaveChanges();
+            return a;
+            //context.SaveChanges();
         }
 
     }

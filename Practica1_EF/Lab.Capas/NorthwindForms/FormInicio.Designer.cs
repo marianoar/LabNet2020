@@ -34,6 +34,8 @@
             this.buttonSuppliers = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonTerritories = new System.Windows.Forms.Button();
+            this.buttonCustomers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCategories
@@ -48,7 +50,7 @@
             // 
             // buttonEmployees
             // 
-            this.buttonEmployees.Location = new System.Drawing.Point(170, 80);
+            this.buttonEmployees.Location = new System.Drawing.Point(173, 80);
             this.buttonEmployees.Name = "buttonEmployees";
             this.buttonEmployees.Size = new System.Drawing.Size(100, 100);
             this.buttonEmployees.TabIndex = 1;
@@ -61,17 +63,17 @@
             this.buttonProducts.Location = new System.Drawing.Point(60, 186);
             this.buttonProducts.Name = "buttonProducts";
             this.buttonProducts.Size = new System.Drawing.Size(100, 100);
-            this.buttonProducts.TabIndex = 2;
+            this.buttonProducts.TabIndex = 4;
             this.buttonProducts.Text = "Products";
             this.buttonProducts.UseVisualStyleBackColor = true;
             this.buttonProducts.Click += new System.EventHandler(this.buttonProducts_Click);
             // 
             // buttonSuppliers
             // 
-            this.buttonSuppliers.Location = new System.Drawing.Point(170, 187);
+            this.buttonSuppliers.Location = new System.Drawing.Point(173, 187);
             this.buttonSuppliers.Name = "buttonSuppliers";
             this.buttonSuppliers.Size = new System.Drawing.Size(100, 100);
-            this.buttonSuppliers.TabIndex = 3;
+            this.buttonSuppliers.TabIndex = 5;
             this.buttonSuppliers.Text = "Suppliers";
             this.buttonSuppliers.UseVisualStyleBackColor = true;
             this.buttonSuppliers.Click += new System.EventHandler(this.buttonSuppliers_Click);
@@ -80,7 +82,7 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(106, 32);
+            this.labelTitle.Location = new System.Drawing.Point(168, 38);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(108, 25);
             this.labelTitle.TabIndex = 4;
@@ -88,19 +90,41 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(128, 326);
+            this.buttonClose.Location = new System.Drawing.Point(173, 317);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 5;
+            this.buttonClose.Size = new System.Drawing.Size(100, 23);
+            this.buttonClose.TabIndex = 7;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // buttonTerritories
+            // 
+            this.buttonTerritories.Location = new System.Drawing.Point(286, 187);
+            this.buttonTerritories.Name = "buttonTerritories";
+            this.buttonTerritories.Size = new System.Drawing.Size(100, 100);
+            this.buttonTerritories.TabIndex = 6;
+            this.buttonTerritories.Text = "Territories";
+            this.buttonTerritories.UseVisualStyleBackColor = true;
+            this.buttonTerritories.Click += new System.EventHandler(this.buttonTerritories_Click);
+            // 
+            // buttonCustomers
+            // 
+            this.buttonCustomers.Location = new System.Drawing.Point(286, 80);
+            this.buttonCustomers.Name = "buttonCustomers";
+            this.buttonCustomers.Size = new System.Drawing.Size(100, 100);
+            this.buttonCustomers.TabIndex = 3;
+            this.buttonCustomers.Text = "Customers";
+            this.buttonCustomers.UseVisualStyleBackColor = true;
+            this.buttonCustomers.Click += new System.EventHandler(this.buttonCustomers_Click);
             // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 361);
+            this.ClientSize = new System.Drawing.Size(441, 361);
+            this.Controls.Add(this.buttonTerritories);
+            this.Controls.Add(this.buttonCustomers);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSuppliers);
@@ -112,7 +136,7 @@
             this.Name = "FormInicio";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Northwind";
+            this.Text = "Lab .Net Oct 2020 : Practica EF";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +150,8 @@
         private System.Windows.Forms.Button buttonSuppliers;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonTerritories;
+        private System.Windows.Forms.Button buttonCustomers;
     }
 }
 

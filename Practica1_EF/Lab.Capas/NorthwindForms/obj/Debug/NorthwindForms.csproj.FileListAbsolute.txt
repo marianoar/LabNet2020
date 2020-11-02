@@ -21,8 +21,6 @@ C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindFor
 C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\bin\Debug\Lab.Logic.dll.config
 C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\bin\Debug\Lab.ResourseAccess.pdb
 C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\bin\Debug\Lab.ResourseAccess.dll.config
-C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\obj\Debug\NorthwindForms.FrmCategories.resources
 C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\obj\Debug\NorthwindForms.FormInicio.resources
-C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\obj\Debug\NorthwindForms.FrmEmployees.resources
-C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\obj\Debug\NorthwindForms.FrmProducts.resources
-C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\obj\Debug\NorthwindForms.FrmSuppliers.resources
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\obj\Debug\NorthwindForms.FrmQuery.resources
+C:\Users\compa\Desktop\NEORIS_LAB\LabNet2020\Practica1_EF\Lab.Capas\NorthwindForms\obj\Debug\NorthwindForms.FrmCreate.resources
