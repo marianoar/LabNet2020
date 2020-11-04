@@ -203,21 +203,10 @@ namespace NorthwindForms
                     case "Employees":
                         EmployeeLogic employeeLogic = new EmployeeLogic();
                         var employees = employeeLogic.GetAll();
-                       // employeeLogic.ModifyEmployee(employees[listBoxQuery.SelectedIndex]);
+
                         FrmCreate frmCreate = new FrmCreate(employees[listBoxQuery.SelectedIndex], true);
                         frmCreate.ShowDialog();
                         listBoxQuery.Items.Clear();
-                        /*
-                        EmployeeLogic employeeLogic = new EmployeeLogic();
-                        var employees = employeeLogic.GetAll();
-                        if (employeeLogic.ModifyEmployee(employees[listBoxQuery.SelectedIndex])) 
-                            MessageBox.Show("Modificacion exitosa");
-
-                        listBoxQuery.Items.Clear();
-                        for (int i = 0; i < employees.Count(); i++)
-                        {
-                            listBoxQuery.Items.Add(employees[i].ToString());
-                        }*/
                         break;
                 }
             }
