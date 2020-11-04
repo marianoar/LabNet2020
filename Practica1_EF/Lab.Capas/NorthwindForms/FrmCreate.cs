@@ -1,4 +1,5 @@
-﻿using Lab.Logic;
+﻿using Lab.Capas.Entities;
+using Lab.Logic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +14,28 @@ namespace NorthwindForms
 {
     public partial class FrmCreate : Form
     {
+        bool modify;
+        EmployeeLogic employeeLogic = new EmployeeLogic();
+        Employees aux;
+        public FrmCreate(Employees e, bool modify) : this()
+        {
+            textBoxLastName.Text = e.LastName;
+            textBoxName.Text = e.FirstName;
+            textBoxAdress.Text = e.Address;
+            textBoxCity.Text = e.City;
+            textBoxCountry.Text = e.Country;
+            
+            this.modify = modify;
+
+            aux = employeeLogic.GetOne(e);
+        }
         public FrmCreate()
         {
             InitializeComponent();
         }
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            if (Validar())
+            if (Validar() && modify==false)
             {
                 string name = textBoxName.Text;
                 string lastName = textBoxLastName.Text;
@@ -31,9 +47,18 @@ namespace NorthwindForms
                 employeeLogic.AddEmployee(name, lastName, adress, city, country);
                 this.Close();
             }
-            else
+            else if (Validar() && modify==true)
             {
-               // MessageBox.Show("Hay un error. Revise los datos");
+              
+                aux.FirstName = textBoxName.Text;
+                aux.LastName = textBoxLastName.Text;
+                aux.Address = textBoxAdress.Text;
+                aux.City = textBoxCountry.Text;
+                aux.Country = textBoxCountry.Text;
+
+                employeeLogic.ModifyEmployee(aux);
+                this.Close();
+                // MessageBox.Show("Hay un error. Revise los datos");
             }
         }
         public bool Validar()

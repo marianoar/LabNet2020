@@ -49,13 +49,8 @@ namespace Lab.Logic
             {
                 if (context.Employees.Find(e.EmployeeID) != null)
                 {
-                    e.FirstName = "Mariano";
-                    e.LastName = "Arias";
-                    e.Address = "CABA";
-                    e.City = "CABA";
-                    e.Country = "Argentina";
+                    context.SaveChanges(); ;
                 }
-                context.SaveChanges();
                 return true;
             }
             catch

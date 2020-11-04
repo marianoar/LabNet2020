@@ -1,7 +1,11 @@
 Lab.Capas/Lab.Entities/bin
 Lab.Capas/Lab.Entities/obj
 Lab.Capas/NorthwindForms/bin
+Lab.Capas/NorthwindForms/bin/Debug
+Lab.Capas/NorthwindForms/bin/Release
 Lab.Capas/NorthwindForms/obj
+Lab.Capas/NorthwindForms/obj/Debug
+Lab.Capas/NorthwindForms/obj/Debug/TempPE
 Lab.Capas/TestResults
 Lab.Capas/Lab.Logic/bin
 Lab.Capas/Lab.Logic/obj
