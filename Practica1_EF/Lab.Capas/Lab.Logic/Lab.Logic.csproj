@@ -51,6 +51,8 @@
     <Compile Include="CategoryLogic.cs" />
     <Compile Include="CustomerLogic.cs" />
     <Compile Include="EmployeeLogic.cs" />
+    <Compile Include="ILogic.cs" />
+    <Compile Include="LogicBase.cs" />
     <Compile Include="ProductLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierLogic.cs" />

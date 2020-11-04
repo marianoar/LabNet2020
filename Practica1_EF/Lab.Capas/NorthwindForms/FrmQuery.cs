@@ -26,8 +26,8 @@ namespace NorthwindForms
             }
             else
             {
-            buttonAlta.Enabled = false;
-            buttonModificar.Enabled = false;
+                buttonAlta.Enabled = false;
+                buttonModificar.Enabled = false;
 
             }
 
@@ -37,7 +37,9 @@ namespace NorthwindForms
             }
             else
             {
-                buttonEliminar.Enabled = false;
+                buttonEliminar.Visible = false;
+                buttonAlta.Visible = false;
+                buttonModificar.Visible = false;
             }
 
         }
@@ -55,7 +57,7 @@ namespace NorthwindForms
                 {
                     case "Categories":
                         CategoryLogic categoriesLogic = new CategoryLogic();
-                        var categories = categoriesLogic.Categories();
+                        var categories = categoriesLogic.GetAll();
 
                         for (int i = 0; i < categories.Count(); i++)
                         {
@@ -65,7 +67,7 @@ namespace NorthwindForms
 
                     case "Employees":
                         EmployeeLogic employeesLogic = new EmployeeLogic();
-                        var employees = employeesLogic.Employees();
+                        var employees = employeesLogic.GetAll();
                         for (int i = 0; i < employees.Count(); i++)
                         {
                             listBoxQuery.Items.Add(employees[i].ToString());
@@ -74,7 +76,7 @@ namespace NorthwindForms
 
                     case "Customers":
                         CustomerLogic customerLogic = new CustomerLogic();
-                        var customers = customerLogic.Customers();
+                        var customers = customerLogic.GetAll();
                         for (int i = 0; i < customers.Count(); i++)
                         {
                             listBoxQuery.Items.Add(customers[i].ToString());
@@ -83,7 +85,7 @@ namespace NorthwindForms
 
                     case "Products":
                         ProductLogic productLogic = new ProductLogic();
-                        var products = productLogic.Products();
+                        var products = productLogic.GetAll();
 
                         for (int i = 0; i < products.Count(); i++)
                         {
@@ -93,7 +95,7 @@ namespace NorthwindForms
 
                     case "Suppliers":
                         SupplierLogic supplierLogic = new SupplierLogic();
-                        var suppliers = supplierLogic.Suppliers();
+                        var suppliers = supplierLogic.GetAll();
                         for (int i = 0; i < suppliers.Count(); i++)
                         {
                             listBoxQuery.Items.Add(suppliers[i]);
@@ -102,7 +104,7 @@ namespace NorthwindForms
 
                     case "Territories":
                         TerritoriesLogic territoriesLogic = new TerritoriesLogic();
-                        var territories = territoriesLogic.Territories();
+                        var territories = territoriesLogic.GetAll();
                         for (int i = 0; i < territories.Count(); i++)
                         {
                             listBoxQuery.Items.Add(territories[i].ToString());
@@ -124,26 +126,46 @@ namespace NorthwindForms
                 {
                     case "Categories":
                         CategoryLogic categoryLogic = new CategoryLogic();
-                        var categories = categoryLogic.Categories();
+                        var categories = categoryLogic.GetAll();
                         MessageBox.Show(string.Concat("Vamos a eliminar a: \n\n", categories[listBoxQuery.SelectedIndex]).ToString());
-                        if (categoryLogic.DeleteCategory(categories[listBoxQuery.SelectedIndex]))
+                        if (categoryLogic.Delete(categories[listBoxQuery.SelectedIndex]))
                         {
-                            MessageBox.Show(string.Concat(thisQuery, " deleted."));
+                            MessageBox.Show(string.Concat("Category deleted."));
                         }
                         else
                         {
-                            MessageBox.Show("Hubo un error");
+                            MessageBox.Show("Hubo un error. No se pudo eliminar.");
+                        }
+                        break;
+                    case "Employees":
+                        EmployeeLogic employeeLogic = new EmployeeLogic();
+                        var employees = employeeLogic.GetAll();
+                        if (employeeLogic.Delete(employees[listBoxQuery.SelectedIndex]))
+                        {
+                            MessageBox.Show(string.Concat("Employee deleted."));
+                            listBoxQuery.Items.Clear();
+                            employees = employeeLogic.GetAll();
+                            for (int i = 0; i < employees.Count(); i++)
+                            {
+                                listBoxQuery.Items.Add(employees[i].ToString());
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubo un error. No se pudo eliminar.");
                         }
                         break;
                     case "Customers":
                         CustomerLogic customerLogic = new CustomerLogic();
-                        var customers = customerLogic.Customers();
-                        MessageBox.Show(string.Concat("Vamos a eliminar a: \n\n", customerLogic.DeleteCustomer(customers[listBoxQuery.SelectedIndex]).ToString()));
-                        break;
-                    case "Employees":
-                        EmployeeLogic employeeLogic = new EmployeeLogic();
-                        var employees = employeeLogic.Employees();
-                        MessageBox.Show(string.Concat("Vamos a eliminar a: \n\n", employeeLogic.DeleteEmployee(employees[listBoxQuery.SelectedIndex]).ToString()));
+                        var customers = customerLogic.GetAll();
+                        if(customerLogic.Delete(customers[listBoxQuery.SelectedIndex]))
+                        {
+                            MessageBox.Show(string.Concat("Customer deleted."));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubo un error. No se pudo eliminar.");
+                        }
                         break;
                 }
             }
@@ -152,12 +174,6 @@ namespace NorthwindForms
                 MessageBox.Show("Ha ocurrido un error. ¿Seleccionó algun item?");
             }
         }
-
-        private void buttonCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void buttonAlta_Click(object sender, EventArgs e)
         {
             try
@@ -185,7 +201,7 @@ namespace NorthwindForms
                 {
                     case "Employees":
                         EmployeeLogic employeeLogic = new EmployeeLogic();
-                        var employees = employeeLogic.Employees();
+                        var employees = employeeLogic.GetAll();
                         if (employeeLogic.ModifyEmployee(employees[listBoxQuery.SelectedIndex])) 
                             MessageBox.Show("Modificacion exitosa");
 
@@ -201,6 +217,10 @@ namespace NorthwindForms
             {
                 MessageBox.Show("Ocurrio un error inesperado ;)");
             }
+        }
+        private void buttonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

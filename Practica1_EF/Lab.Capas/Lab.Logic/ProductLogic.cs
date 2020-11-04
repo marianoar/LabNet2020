@@ -8,25 +8,27 @@ using System.Threading.Tasks;
 
 namespace Lab.Logic
 {
-    public class ProductLogic
+    public class ProductLogic : LogicBase, ILogic<Products>
     {
-        private readonly NorthwindContext context;
-        public ProductLogic()
+        public List<Products> GetAll()
         {
-            this.context = new NorthwindContext();
-        }
-        public List<Products> Products()
-        {
-                return context.Products.ToList();
+            return context.Products.ToList();
         }
 
-        public Products Delete(Products p)
+        public Products GetOne(int id)
         {
-            Products a= context.Products.Find(p.CategoryID);
-            context.Products.Remove(p);
-            context.SaveChanges();
-            return a;
-            //context.SaveChanges();
+
+            return context.Products.FirstOrDefault(p => p.ProductID.Equals(id));
+        }
+
+        public Products GetOne(Products t)
+        {
+            return context.Products.Find(t.ProductID);
+        }
+
+        public bool Delete(Products p)
+        {
+            return false;
         }
 
     }

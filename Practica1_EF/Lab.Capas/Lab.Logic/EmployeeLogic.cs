@@ -9,40 +9,59 @@ using System.Threading.Tasks;
 
 namespace Lab.Logic
 {
-    public class EmployeeLogic
+    public class EmployeeLogic : LogicBase, ILogic<Employees>
     {
-        private readonly NorthwindContext context;
-        public EmployeeLogic()
-        {
-            this.context = new NorthwindContext();
-        }
-        public List<Employees> Employees()
+        public List<Employees> GetAll()
         {
             return context.Employees.ToList();
         }
-        public Employees DeleteEmployee(Employees e)
+
+        public Employees GetOne(int id)
         {
-            /* if(context.Employees.Find(e.EmployeeID)!=null)
-             {
-                 context.Employees.Remove(e);
-             }
-             context.SaveChanges();*/
-            return e;
 
+            return context.Employees.FirstOrDefault(e => e.EmployeeID.Equals(id));
+        }
 
+        public Employees GetOne(Employees e)
+        {
+            return context.Employees.Find(e.EmployeeID);
+        }
+
+        public bool Delete(Employees e)
+        {
+            try
+            {
+                if (context.Employees.Find(e.EmployeeID) != null)
+                {
+                    context.Employees.Remove(e);
+                }
+                context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         public bool ModifyEmployee(Employees e)
         {
-            if (context.Employees.Find(e.EmployeeID) != null)
+            try
             {
-                e.FirstName = "Mariano";
-                e.LastName = "Arias";
-                e.Address = "San Telmo";
-                e.City = "CABA";
-                e.Country = "Argentina";
+                if (context.Employees.Find(e.EmployeeID) != null)
+                {
+                    e.FirstName = "Mariano";
+                    e.LastName = "Arias";
+                    e.Address = "CABA";
+                    e.City = "CABA";
+                    e.Country = "Argentina";
+                }
+                context.SaveChanges();
+                return true;
             }
-            context.SaveChanges();
-            return true;
+            catch
+            {
+                return false;
+            }
         }
 
         public bool AddEmployee(string name, string lastName, string adress, string city, string country)

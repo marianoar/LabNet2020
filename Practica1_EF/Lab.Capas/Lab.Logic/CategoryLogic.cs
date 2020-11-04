@@ -8,32 +8,41 @@ using System.Threading.Tasks;
 
 namespace Lab.Logic
 {
-    public class CategoryLogic
+    public class CategoryLogic : LogicBase, ILogic<Categories>
     {
-        private readonly NorthwindContext context;
-        public CategoryLogic()
-        {
-            this.context = new NorthwindContext();
-        }
-        public List<Categories> Categories()
+
+        public List<Categories> GetAll()
         {
             return context.Categories.ToList();
         }
 
-        public Categories Categories(int id)
+        public Categories GetOne(int id)
         {
-            return context.Categories.FirstOrDefault(c => c .CategoryID.Equals(id));
+
+            return context.Categories.FirstOrDefault(t => t.CategoryID.Equals(id));
         }
-        public bool DeleteCategory (Categories cat)
+
+        public Categories GetOne(Categories t)
+        {
+            return context.Categories.Find(t.CategoryID);
+        }
+        public bool Delete (Categories cat)
         {
             try
             {
+                if (context.Customers.Find(cat.CategoryID)!=null)
+                {
                // context.Categories.FirstOrDefault(c => c.CategoryID.Equals(cat.CategoryID));
                 context.Categories.Remove(cat);
                 context.SaveChanges();
                 return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            catch(Exception ex)
+            catch
             {
                 return false;
             }

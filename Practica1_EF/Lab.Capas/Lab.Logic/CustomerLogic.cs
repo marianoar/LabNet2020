@@ -8,32 +8,40 @@ using System.Threading.Tasks;
 
 namespace Lab.Logic
 {
-    public class CustomerLogic
+    public class CustomerLogic : LogicBase, ILogic<Customers>
     {
-        private readonly NorthwindContext context;
-        public CustomerLogic()
+        public List<Customers> GetAll()
         {
-            this.context = new NorthwindContext();
-        }
-        public List<Customers> Customers()
-        {
-
             return context.Customers.ToList();
         }
 
-        public Customers Customers(int id)
+        public Customers GetOne(int id)
         {
-            return context.Customers.FirstOrDefault(c => c.CustomerID.Equals(id));
+
+            return context.Customers.FirstOrDefault(t => t.CustomerID.Equals(id));
         }
-        public bool DeleteCustomer(Customers c)
+
+        public Customers GetOne(Customers t)
         {
-            if(context.Customers.Find(c.CustomerID)!= null)
+            return context.Customers.Find(t.CustomerID);
+        }
+        public bool Delete(Customers c)
+        {
+            try
             {
-                context.Customers.Remove(c);
-                //context.SaveChanges();
-                return true;
+
+                if (context.Customers.Find(c.CustomerID) != null)
+                {
+                    context.Customers.Remove(c);
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch
             {
                 return false;
             }

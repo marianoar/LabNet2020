@@ -8,22 +8,26 @@ using System.Threading.Tasks;
 
 namespace Lab.Logic
 {
-    public class TerritoriesLogic
+    public class TerritoriesLogic : LogicBase, ILogic<Territories>
     {
-        private readonly NorthwindContext context;
-        public TerritoriesLogic()
+        public List<Territories> GetAll()
         {
-            this.context = new NorthwindContext();
-        }
-        public List<Territories> Territories()
-        {
-
             return context.Territories.ToList();
         }
 
-        public Territories Territories(int id) { 
+        public Territories GetOne(int id) { 
         
             return context.Territories.FirstOrDefault(t => t.TerritoryID.Equals(id));
+        }
+
+        public Territories GetOne(Territories t)
+        {
+            return context.Territories.Find(t.TerritoryID);
+        }
+
+        public bool Delete(Territories t)
+        {
+            return false;
         }
     }
 }

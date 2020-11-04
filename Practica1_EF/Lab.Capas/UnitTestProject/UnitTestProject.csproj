@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D79B93F6-D9B3-45BE-A4A0-66675D2A6628}</ProjectGuid>
+    <ProjectGuid>{C4527CC7-E8D9-4F50-A78D-4D9191AAEC55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTestProject</RootNamespace>
@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lab.Entities\Lab.Entities.csproj">
-      <Project>{f82c1f03-4f76-4c3f-b363-3f0c049f4e19}</Project>
+      <Project>{F82C1F03-4F76-4C3F-B363-3F0C049F4E19}</Project>
       <Name>Lab.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lab.Logic\Lab.Logic.csproj">
-      <Project>{7a8fe925-5c8e-4c9a-aa42-32d718485e7e}</Project>
+      <Project>{7A8FE925-5C8E-4C9A-AA42-32D718485E7E}</Project>
       <Name>Lab.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lab.ResourseAccess\Lab.ResourseAccess.csproj">
