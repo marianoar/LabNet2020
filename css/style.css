@@ -1,0 +1,64 @@
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightsteelblue;
+}
+
+h1{
+  font-weight: bold;
+}
+
+h1, h2{
+  text-align: center;
+  color:grey;
+}
+
+div{
+  margin:auto;
+}
+
+input{
+margin-top: 5px;
+margin-bottom: 5px;
+width: 20em;
+}
+
+div.gender{
+  margin-left: 0px;
+  width: 50%;
+}
+div.gender input{
+  width: 5em;
+}
+form{
+  min-width: 20em;
+  margin:auto;
+}
+
+#formulario{
+background-color: gainsboro;
+box-shadow: 0px 2px 20px 0px rgba(6, 9, 53, 0.5);
+padding: 25px;
+border-radius: 5px;
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(35, 35, 94);
+}
+
+legend{
+  color: grey;
+}
+
+#botones{
+  margin-left:5em;
+}
+
+.buttons{
+  margin: 2px;
+  height: 35px;
+  background-color: lightcyan;
+  border-radius: 5em;
+  border: solid 1px lightslategray ;
+  color: rgb(7, 7, 61);
+  font: bold;
+}
+
+

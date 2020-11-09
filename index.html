@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script src="./js/scripts.js" defer></script>
+  <script src="./js/functions.js"></script>
+<script>
+
+</script>
+  <title>Lab .Net 2020</title>
+  <style>input.edad{
+    width: 5em;
+  }</style>
+</head>
+
+<body>
+  <h1>Lab .Net Octubre 2020</h1>
+  <h2>Practica HML CSS JS </h2>
+  <br>
+  <div>
+    <form id="formulario" style="width: 30%;">
+      <fieldset>
+        <legend>Informacion Personal</legend>
+        <label for="name">Nombre: <br>
+          <input type="text" id="name">
+        </label> <br>
+
+        <label for="lastName">
+          Apellido: <br>
+          <input type="text" id="lastName">
+        </label>
+        <br>
+        <label for="age" required>
+          Edad: <br>
+          <input type="text" id="age" class="edad">
+        </label>
+        <br>
+        <div class="gender">
+          <label for="man">
+            <input id="man" type="radio" name="gender" value="hombre">
+            Hombre
+          </label>
+          <label for="woman">
+            <input id="woman" type="radio" name="gender" value="mujer">
+            Mujer
+          </label>
+          <label for="other">
+            <input id="other" type="radio" name="gender" value="otro">
+            Otro
+          </label>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Informacion Adicional</legend>
+        <label for="empresa">
+          Empresa:
+          <input type="text" id="empresa">
+        </label>
+        <br>
+        <div id="botones">
+          <button type="button" class="buttons" id="limpiar">Limpiar</button>
+          <button type="submit" class="buttons">Enviar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>
