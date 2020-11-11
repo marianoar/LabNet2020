@@ -1,0 +1,29 @@
+﻿@model Lab.Capas.MVC.Models.EmployeeView
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create New Employee</h2>
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+{
+    <div id="formulario">
+        
+        Id: @Html.TextBoxFor(e=>e.EmployeeId) 
+    <!--Lo traigo para poder pasar el ID para modificar
+        la idea es que quede visible pero deshabilitado-->
+        <br />
+
+        Last Name: @Html.TextBoxFor(e => e.LastName)
+        <br />
+        First Name: @Html.TextBoxFor(e => e.FirstName)
+        <br />
+        Title: @Html.TextBoxFor(e => e.Title)
+        <br />
+        Address: @Html.TextBoxFor(e => e.Address)
+        <br />
+        City: @Html.TextBoxFor(e => e.City)
+    <br />
+    <input type="submit" value="Guardar" class="btn"/>
+    </div>
+}
