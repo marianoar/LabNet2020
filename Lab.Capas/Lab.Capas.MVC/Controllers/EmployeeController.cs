@@ -53,12 +53,13 @@ namespace Lab.Capas.MVC.Controllers
                     Address = e.Address,
                     City = e.City
                 };
-                if (employeesLogic.GetOne(employeeEntity) == null)
+                if (employeeEntity.EmployeeID==0)
                 {
                     employeesLogic.Create(employeeEntity);
                 }
                 else
                 {
+                   
                     employeesLogic.Update(employeeEntity);
                 }
                 return RedirectToAction("index");
@@ -132,6 +133,8 @@ namespace Lab.Capas.MVC.Controllers
                 EmployeesLogic employeesLogic = new EmployeesLogic();
         
                 var employees = employeesLogic.GetAll();
+
+                // entiendo que esta forma no seria la ideal pero rompia
                 List<EmployeeView> eView = (from e in employees
                                             select new EmployeeView()
                                             {
@@ -147,7 +150,7 @@ namespace Lab.Capas.MVC.Controllers
                 {
                     if (e.EmployeeId == id)
                     {
-                        return View("create", e); // 
+                        return View("create", e);
                     }
                 }
                 return null;

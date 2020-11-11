@@ -48,7 +48,7 @@ namespace Lab.Logic
             {
                 if (context.Employees.Find(e.EmployeeID) != null)
                 {
-                    context.SaveChanges(); ;
+                    context.SaveChanges();
                 }
                 return true;
             }

@@ -9,9 +9,9 @@
 {
     <div id="formulario">
         
-        Id: @Html.TextBoxFor(e=>e.EmployeeId) 
-    <!--Lo traigo para poder pasar el ID para modificar
-        la idea es que quede visible pero deshabilitado-->
+        <br />
+        @Html.HiddenFor(e=>e.EmployeeId)
+
         <br />
 
         Last Name: @Html.TextBoxFor(e => e.LastName)
