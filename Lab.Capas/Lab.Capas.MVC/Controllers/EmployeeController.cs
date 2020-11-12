@@ -53,13 +53,13 @@ namespace Lab.Capas.MVC.Controllers
                     Address = e.Address,
                     City = e.City
                 };
+
                 if (employeeEntity.EmployeeID==0)
                 {
                     employeesLogic.Create(employeeEntity);
                 }
                 else
                 {
-                   
                     employeesLogic.Update(employeeEntity);
                 }
                 return RedirectToAction("index");
@@ -85,21 +85,20 @@ namespace Lab.Capas.MVC.Controllers
             }
         }
 
-        public ActionResult Modify(EmployeeView e)
+        public ActionResult Update(EmployeeView employeeView)
         {
             try
             {
                 EmployeesLogic employeesLogic = new EmployeesLogic();
-                Employees employeeEntity = new Employees()
+
+                var employee = employeesLogic.GetOne(employeeView.EmployeeId);
+
+                if (employeesLogic.GetId(employee) == employeeView.EmployeeId)
                 {
-                    LastName = e.LastName,
-                    FirstName = e.FirstName,
-                    Title = e.Title,
-                    Address = e.Address,
-                    City = e.City
-                };
-                employeesLogic.Update(employeeEntity);
-                return RedirectToAction("index");
+                    return View("create", employeeView);
+                }
+
+                return View("error");
             }
             catch (SaveLogsException)
             {
@@ -107,25 +106,6 @@ namespace Lab.Capas.MVC.Controllers
             }
         }
         /*
-        public ActionResult Search ()
-        {
-            return View();
-        }
-
-        public ActionResult SearchById(int id)
-        {
-            try
-            {
-                EmployeesLogic employeesLogic = new EmployeesLogic();
-                Employees e = employeesLogic.GetOne(id);
-                return RedirectToAction("index");
-            }
-            catch (SaveLogsException)
-            {
-                return RedirectToAction("error");
-            }
-        }*/
-
         public ActionResult Update(int id)
         {
             try
@@ -159,7 +139,7 @@ namespace Lab.Capas.MVC.Controllers
             {
                 return RedirectToAction("error");
             }
-        }
+        }*/
         public ActionResult Error()
         {
             return View();

@@ -14,6 +14,8 @@ namespace Lab.Logic
 
         T GetOne(T obj);
 
+        int GetId(T obj);
+
         bool Create(T obj);
 
         bool Update(T obj);

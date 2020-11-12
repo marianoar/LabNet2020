@@ -26,6 +26,10 @@ namespace Lab.Logic
             return context.Employees.Find(e.EmployeeID);
         }
 
+        public int GetId(Employees e)
+        {
+            return context.Employees.Find(e.EmployeeID).EmployeeID;
+        }
         public bool Delete(Employees e)
         {
             try
@@ -46,10 +50,18 @@ namespace Lab.Logic
         {
             try
             {
-                if (context.Employees.Find(e.EmployeeID) != null)
-                {
-                    context.SaveChanges();
-                }
+                var aux = context.Employees.Find(e.EmployeeID);
+
+                aux.LastName = e.LastName;
+                aux.FirstName = e.FirstName;
+                aux.Title = e.Title;
+                aux.Address = e.Address;
+                aux.City = e.City;
+               // if (context.Employees.Find(e.EmployeeID) != null)
+             
+
+             context.SaveChanges();
+             
                 return true;
             }
             catch (Exception ex)

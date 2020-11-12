@@ -22,15 +22,15 @@
     </tr>
     @foreach (var employee in Model)
     {
-<tr>
-    <td>@employee.EmployeeId</td>
-    <td>@employee.LastName</td>
-    <td>@employee.FirstName</td>
-    <td>@employee.Title</td>
-    <td>@employee.Address</td>
-    <td>@employee.City</td>
-    <td>@Html.ActionLink("Eliminar", "Delete", new { id = employee.EmployeeId })</td>
-    <td>@Html.ActionLink("Modificar", "Update", new { id = employee.EmployeeId })</td>
-</tr>
+        <tr>
+            <td>@employee.EmployeeId</td>
+            <td>@employee.LastName</td>
+            <td>@employee.FirstName</td>
+            <td>@employee.Title</td>
+            <td>@employee.Address</td>
+            <td>@employee.City</td>
+            <td>@Html.ActionLink("Eliminar", "Delete", new { id = employee.EmployeeId })</td>
+            <td>@Html.ActionLink("Modificar", "Update", employee)</td>
+        </tr>
     }
 </table>
