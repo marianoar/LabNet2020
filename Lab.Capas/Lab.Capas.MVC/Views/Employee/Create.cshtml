@@ -1,29 +1,54 @@
 ﻿@model Lab.Capas.MVC.Models.EmployeeView
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "";
 }
 
-<h2>Create New Employee</h2>
+<h2>@ViewBag.Add</h2>
+
 
 @using (Html.BeginForm("Create", "Employee", FormMethod.Post))
 {
-    <div id="formulario">
-        
-        <br />
-        @Html.HiddenFor(e=>e.EmployeeId)
-
-        <br />
-
-        Last Name: @Html.TextBoxFor(e => e.LastName)
-        <br />
-        First Name: @Html.TextBoxFor(e => e.FirstName)
-        <br />
-        Title: @Html.TextBoxFor(e => e.Title)
-        <br />
-        Address: @Html.TextBoxFor(e => e.Address)
-        <br />
-        City: @Html.TextBoxFor(e => e.City)
+<div id="formulario">
     <br />
-    <input type="submit" value="Guardar" class="btn"/>
-    </div>
+    Id: <label style="width:15%">
+        @Html.TextBoxFor(e => e.EmployeeId)
+    </label>
+    <label id="errorMessage">
+        @Html.ValidationMessageFor(e => e.EmployeeId)
+    </label>
+    <br />
+    Last Name: @Html.TextBoxFor(e => e.LastName)<br />
+    <label id="errorMessage">
+        @Html.ValidationMessageFor(e => e.LastName)
+    </label>
+    <br />
+    First Name: @Html.TextBoxFor(e => e.FirstName)<br />
+    <label id="errorMessage">
+        @Html.ValidationMessageFor(e => e.FirstName)
+    </label>
+    <br />
+    Title: @Html.TextBoxFor(e => e.Title)<br />
+    <label id="errorMessage">
+        @Html.ValidationMessageFor(e => e.Title)
+    </label>
+    <br />
+    Address: @Html.TextBoxFor(e => e.Address)<br />
+    <label id="errorMessage">
+        @Html.ValidationMessageFor(e => e.Address)
+    </label>
+    <br />
+    City: @Html.TextBoxFor(e => e.City)<br />
+    <label id="errorMessage">
+        @Html.ValidationMessageFor(e => e.City)
+    </label>
+    <br />
+    <!--Este campo EMail es solo para probar la validacion, no corresponde a ningun atributo de la entidad-->
+    EMail: @Html.TextBoxFor(e => e.EMail)<br />
+    <label id="errorMessage">
+        @Html.ValidationMessageFor(e => e.EMail)
+    </label>
+
+    <br />
+    <input type="submit" value="Guardar" class="btn" />
+</div>
 }

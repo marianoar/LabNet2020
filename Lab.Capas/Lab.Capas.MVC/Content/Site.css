@@ -25,16 +25,17 @@ textarea {
 }
 input{
     background-color:lightsteelblue;
-    width:100%;
     margin: 5px;
+    width:100%
 }
 h2{
     text-align:center;
 }
+
 #formulario {
-    font:bold;
+    font: bold;
+    width:300px;
     background-color: gainsboro;
-    width: 250px;
     margin: auto;
     box-shadow: 0px 2px 20px 0px rgba(6, 9, 53, 0.5);
     padding: 25px;
@@ -43,7 +44,7 @@ h2{
 #boton {
     width: 10em;
     height:auto;
-    background-color: slategrey;
+    background-color: forestgreen;
     font:bold;
     padding : 5px;
     margin: 5px;
@@ -52,4 +53,8 @@ h2{
 a{
     text-decoration:none;
     color: black;
+}
+#errorMessage {
+    color: red;
+    font-size: smaller;
 }

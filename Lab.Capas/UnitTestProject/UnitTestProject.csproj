@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -59,6 +60,18 @@
     <ProjectReference Include="..\Errores\Errores.csproj">
       <Project>{F4562633-4A9D-432E-910A-BED7881D3387}</Project>
       <Name>Errores</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lab.Capas.MVC\Lab.Capas.MVC.csproj">
+      <Project>{858c23f1-64af-47ae-bf40-96a841ede34d}</Project>
+      <Name>Lab.Capas.MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lab.Entities\Lab.Entities.csproj">
+      <Project>{5c278d52-c715-4a89-a392-4a570af92145}</Project>
+      <Name>Lab.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lab.Logic\Lab.Logic.csproj">
+      <Project>{a8025a34-4768-4b57-a6d7-3338325497d0}</Project>
+      <Name>Lab.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lab.ResourceAcces\Lab.ResourceAcces.csproj">
       <Project>{31926586-E4D3-4D86-99CF-D435D6B1318C}</Project>

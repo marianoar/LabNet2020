@@ -52,17 +52,20 @@ namespace Lab.Logic
             {
                 var aux = context.Employees.Find(e.EmployeeID);
 
-                aux.LastName = e.LastName;
-                aux.FirstName = e.FirstName;
-                aux.Title = e.Title;
-                aux.Address = e.Address;
-                aux.City = e.City;
-               // if (context.Employees.Find(e.EmployeeID) != null)
-             
+                if(aux != null)
+                {
+                    aux.LastName = e.LastName;
+                    aux.FirstName = e.FirstName;
+                    aux.Title = e.Title;
+                    aux.Address = e.Address;
+                    aux.City = e.City;
+                    // if (context.Employees.Find(e.EmployeeID) != null)
+                    context.SaveChanges();
+                    return true;
+                }
 
-             context.SaveChanges();
-             
-                return true;
+                throw new Exception("Error al modificar: no se encontro el objeto");
+  
             }
             catch (Exception ex)
             {

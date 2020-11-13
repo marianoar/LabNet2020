@@ -21,7 +21,7 @@ namespace Lab.Capas.MVC.Controllers
             List<EmployeeView> eView = (from e in employees 
                                         select new EmployeeView() 
                                         { 
-                                            EmployeeId = e.EmployeeID, 
+                                            EmployeeId =e.EmployeeID,
                                             LastName = e.LastName, 
                                             FirstName = e.FirstName, 
                                             Title = e.Title, 
@@ -34,37 +34,50 @@ namespace Lab.Capas.MVC.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Add = "Add new Employee";
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(EmployeeView e)
+        public ActionResult Create(EmployeeView e) // [Bind(Exclude = "EmployeeId")]
         {
             try
             {
-                EmployeesLogic employeesLogic = new EmployeesLogic();
-
-                Employees employeeEntity = new Employees()
+               if (ModelState.IsValid)
                 {
-                    EmployeeID = e.EmployeeId,
-                    LastName = e.LastName,
-                    FirstName = e.FirstName,
-                    Title = e.Title,
-                    Address = e.Address,
-                    City = e.City
-                };
+                    EmployeesLogic employeesLogic = new EmployeesLogic();
 
-                if (employeeEntity.EmployeeID==0)
-                {
-                    employeesLogic.Create(employeeEntity);
-                }
+                    Employees employeeEntity = new Employees()
+                    {
+                        EmployeeID = e.EmployeeId,
+                        LastName = e.LastName,
+                        FirstName = e.FirstName,
+                        Title = e.Title,
+                        Address = e.Address,
+                        City = e.City
+                    };
+
+                    if (employeeEntity.EmployeeID == 0)
+                    {
+                        employeesLogic.Create(employeeEntity);
+                    }
+                    else
+                    {
+                        employeesLogic.Update(employeeEntity);
+                    }
+                    return RedirectToAction("Success");
+
+               }
                 else
                 {
-                    employeesLogic.Update(employeeEntity);
+                    return View(e);
                 }
-                return RedirectToAction("index");
             }
             catch(SaveLogsException)
+            {
+                return RedirectToAction("error");
+            }
+            catch(Exception)
             {
                 return RedirectToAction("error");
             }
@@ -77,9 +90,13 @@ namespace Lab.Capas.MVC.Controllers
                 EmployeesLogic employeesLogic = new EmployeesLogic();
                 Employees e = employeesLogic.GetOne(id);
                 employeesLogic.Delete(e);
-                return RedirectToAction("index");
+                return RedirectToAction("success");
             }
             catch(SaveLogsException)
+            {
+                return RedirectToAction("error");
+            }
+            catch (Exception)
             {
                 return RedirectToAction("error");
             }
@@ -93,7 +110,7 @@ namespace Lab.Capas.MVC.Controllers
 
                 var employee = employeesLogic.GetOne(employeeView.EmployeeId);
 
-                if (employeesLogic.GetId(employee) == employeeView.EmployeeId)
+                if (employeesLogic.GetId(employee) == (employeeView.EmployeeId))
                 {
                     return View("create", employeeView);
                 }
@@ -104,43 +121,18 @@ namespace Lab.Capas.MVC.Controllers
             {
                 return RedirectToAction("error");
             }
-        }
-        /*
-        public ActionResult Update(int id)
-        {
-            try
-            {
-                EmployeesLogic employeesLogic = new EmployeesLogic();
-        
-                var employees = employeesLogic.GetAll();
-
-                // entiendo que esta forma no seria la ideal pero rompia
-                List<EmployeeView> eView = (from e in employees
-                                            select new EmployeeView()
-                                            {
-                                                EmployeeId = e.EmployeeID,
-                                                LastName = e.LastName,
-                                                FirstName = e.FirstName,
-                                                Title = e.Title,
-                                                Address = e.Address,
-                                                City = e.City
-                                            }).ToList();
-
-                foreach (var e in eView)
-                {
-                    if (e.EmployeeId == id)
-                    {
-                        return View("create", e);
-                    }
-                }
-                return null;
-            }
-            catch (SaveLogsException)
+            catch (Exception)
             {
                 return RedirectToAction("error");
             }
-        }*/
+        }
+
         public ActionResult Error()
+        {
+            return View();
+        }
+
+        public ActionResult Success()
         {
             return View();
         }
