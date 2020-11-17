@@ -17,27 +17,38 @@ namespace Lab.Capas.API.Controllers
             return View();
         }
 
-        public ActionResult Get()
+        public ActionResult Get(Photo r)
         {
-            ViewBag.Title = "Astronomy Picture of the Day";
-            HttpClient clienteHttp = new HttpClient();
-            clienteHttp.BaseAddress = new Uri("https://api.nasa.gov/planetary/apod");
-
-            var request = clienteHttp.GetAsync("?api_key=6u3ZEO3Pafy6aiIbCctFScwnFsXbK7vP6KcvMN95").Result;
-
-            
-            if (request.IsSuccessStatusCode) //identifica si es un 200
+            try
             {
-                var resultString = request.Content.ReadAsStringAsync().Result;
+                ViewBag.Title = "Astronomy Picture of the Day";
+                HttpClient clienteHttp = new HttpClient();
+                clienteHttp.BaseAddress = new Uri("https://api.nasa.gov/planetary/apod");
+                HttpResponseMessage request;
 
-               var getView = JsonConvert.DeserializeObject<Root>(resultString);
+                if (r.date == null)
+                {
+                    request = clienteHttp.GetAsync("?api_key=6u3ZEO3Pafy6aiIbCctFScwnFsXbK7vP6KcvMN95").Result;
+                }
+                else
+                {
+                    request = clienteHttp.GetAsync("?api_key=6u3ZEO3Pafy6aiIbCctFScwnFsXbK7vP6KcvMN95&date=" + r.date + "").Result;
+                }
+                if (request.IsSuccessStatusCode) //identifica si es un 200
+                {
+                    var resultString = request.Content.ReadAsStringAsync().Result;
 
-                string aux = getView.url;
-                return View(getView);
+                    var getView = JsonConvert.DeserializeObject<Photo>(resultString);
+
+                    string aux = getView.url;
+                    return View(getView);
+                }
             }
-
+            catch(Exception)
+            {
+                RedirectToAction("Get");
+            }
             return View();
-
         }
     }
 }

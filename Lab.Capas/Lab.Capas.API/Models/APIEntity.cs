@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Lab.Capas.API.Models
 {
-    public class Root
+    public class Photo
     {
         public string date { get; set; }
         public string explanation { get; set; }

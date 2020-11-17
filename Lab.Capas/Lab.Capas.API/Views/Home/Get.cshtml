@@ -1,12 +1,21 @@
-﻿@model Lab.Capas.API.Models.Root
+﻿@model Lab.Capas.API.Models.Photo
 @{
     ViewBag.Title = "Astronomy Picture of the Day";
 }
 <div id="centro">
     <h2 style="text-align:center">Astronomy Picture of the Day</h2>
-
+    <div style="text-align:center">
+        @using (Html.BeginForm("Get", "Home", FormMethod.Get))
+        {
+            <h4>Seleccionar otro dia:</h4>
+            <!--Falta setear fecha maxima-->
+            @Html.TextBoxFor(model => model.date,
+               new { @type = "date", @Value = Model.date })
+            <input type="submit" value="Enviar" class="btn" />
+        }
+    </div>
     <h3 style="text-align:center">@Html.DisplayName(Model.title)</h3>
-
+    <p style="text-align:center">Date Picture: @Model.date</p>
     <p>
         <img src="@Url.Content(Model.url)" alt="" />
     </p>
