@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Lab.Capas.MVC.Controllers
 {
     public class EmployeeController : Controller
@@ -28,7 +29,6 @@ namespace Lab.Capas.MVC.Controllers
                                             Address = e.Address, 
                                             City = e.City 
                                         }).ToList();
-
             return View(eView);
         }
 

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Errores", "Errores\Errores.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Capas.MVC", "Lab.Capas.MVC\Lab.Capas.MVC.csproj", "{858C23F1-64AF-47AE-BF40-96A841EDE34D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab.Capas.API", "Lab.Capas.API\Lab.Capas.API.csproj", "{788087EB-F42E-4AE3-85FE-1D43AA91298C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{858C23F1-64AF-47AE-BF40-96A841EDE34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858C23F1-64AF-47AE-BF40-96A841EDE34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858C23F1-64AF-47AE-BF40-96A841EDE34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{788087EB-F42E-4AE3-85FE-1D43AA91298C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{788087EB-F42E-4AE3-85FE-1D43AA91298C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{788087EB-F42E-4AE3-85FE-1D43AA91298C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{788087EB-F42E-4AE3-85FE-1D43AA91298C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

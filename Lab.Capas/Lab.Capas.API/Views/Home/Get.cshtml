@@ -1,0 +1,17 @@
+﻿@model Lab.Capas.API.Models.Root
+@{
+    ViewBag.Title = "Astronomy Picture of the Day";
+}
+<div id="centro">
+    <h2 style="text-align:center">Astronomy Picture of the Day</h2>
+
+    <h3 style="text-align:center">@Html.DisplayName(Model.title)</h3>
+
+    <p>
+        <img src="@Url.Content(Model.url)" alt="" />
+    </p>
+    <br />
+    <p>
+        <b>Description:</b> @Model.explanation
+    </p>
+</div>
